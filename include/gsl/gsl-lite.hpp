@@ -20,6 +20,7 @@
 #ifndef GSL_GSL_LITE_HPP_INCLUDED
 #define GSL_GSL_LITE_HPP_INCLUDED
 
+#ifndef gsl_CONFIG_MODULE
 #include <algorithm>
 #include <exception>
 #include <iterator>
@@ -30,6 +31,11 @@
 #include <string>
 #include <utility>
 #include <vector>
+#define gsl_MODULE_EXPORT
+#else
+import std.core;
+#define gsl_MODULE_EXPORT export
+#endif
 
 #define  gsl_lite_MAJOR  0
 #define  gsl_lite_MINOR  34
