@@ -20,7 +20,6 @@
 #ifndef GSL_GSL_LITE_HPP_INCLUDED
 #define GSL_GSL_LITE_HPP_INCLUDED
 
-#ifndef gsl_CONFIG_MODULE
 #include <algorithm>
 #include <exception>
 #include <iterator>
@@ -31,9 +30,10 @@
 #include <string>
 #include <utility>
 #include <vector>
+
+#ifndef gsl_MODULE_OUTPUT
 #define gsl_MODULE_EXPORT
 #else
-import std.core;
 #define gsl_MODULE_EXPORT export
 #endif
 
@@ -459,6 +459,7 @@ import std.core;
 
 gsl_DISABLE_MSVC_WARNINGS( 26410 26415 26418 26472 26439 26440 26473 26481 26482 26446 26490 26487 )
 
+gsl_MODULE_EXPORT
 namespace gsl {
 
 // forward declare span<>:
